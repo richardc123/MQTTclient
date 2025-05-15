@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 1rem;
+  }
+  
+  .config {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .card.boolean {
+    color: #000;
+  }
+  
+  .card.boolean.on  { background: #c6f6d5; } /* verde claro */
+  .card.boolean.off { background: #fed7d7; } /* vermelho claro */
+  
+  .card input[type="number"] {
+    width: 60px;
+    margin-right: 0.5rem;
+  }
+  
+  .card button.send {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
