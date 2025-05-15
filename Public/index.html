@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cliente MQTT Dinâmico</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Biblioteca MQTT.js via CDN -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+  <div class="config">
+    <h2>Configuração MQTT</h2>
+    <!-- Informe aqui ws://host:porta/mqtt ou wss://host:porta/mqtt -->
+    <label>URL WS/WSS:
+      <input
+        type="text"
+        id="url"
+        value="ws://innovariot.duckdns.org:9001/mqtt"
+        placeholder="ws://exemplo.com:porta/mqtt"
+      />
+    </label><br/>
+    <label>Usuário:
+      <input
+        type="text"
+        id="user"
+        value="usuario_teste_1"
+        placeholder="seu usuário"
+      />
+    </label><br/>
+    <label>Senha:
+      <input
+        type="password"
+        id="pass"
+        value="123456"
+        placeholder="sua senha"
+      />
+    </label><br/>
+    <button id="btnConnect">Conectar</button>
+    <p id="status">Status: <em>desconectado</em></p>
+  </div>
+
+  <div class="cards" id="cardsContainer">
+    <!-- Os cards de variáveis serão inseridos aqui -->
+  </div>
+
+  <!-- Seu script principal -->
+  <script src="app.js"></script>
+
+</body>
+</html>
