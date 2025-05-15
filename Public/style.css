@@ -1,0 +1,172 @@
+/* reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* variáveis de cor */
+:root {
+  --bg: #f4f7fa;
+  --card-bg: #ffffff;
+  --primary: #4a90e2;
+  --text: #333333;
+  --muted: #666666;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  margin-bottom: 1.5rem;
+}
+.header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+/* Configuração */
+.config {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+.config h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.form-row label {
+  width: 80px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.form-row input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn:hover {
+  background: #357ab8;
+}
+.status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Grid de Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Card genérico */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* Valor */
+.card p.val {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+/* Unidade */
+.card span.unit {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-left: 0.25rem;
+}
+
+/* Estado BIT */
+.card.boolean {
+  justify-content: center;
+}
+.card.boolean.on {
+  background: var(--success);
+}
+.card.boolean.off {
+  background: var(--danger);
+}
+.card.boolean p.val {
+  font-size: 1.2rem;
+  color: white;
+}
+.card.boolean button.send {
+  margin-top: 0.5rem;
+}
+
+/* Input e botão de envio internos */
+.card input[type="number"] {
+  width: 80px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+.card button.send {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.card button.send:hover {
+  background: #357ab8;
+}
