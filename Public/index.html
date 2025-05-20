@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <title>INNOVAR GI | Dashboard IoT</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- MQTT.js via CDN -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>INNOVAR GI | Dashboard IoT</h1>
+  </header>
+
+  <section class="config">
+    <h2>Configuração MQTT</h2>
+    <div class="form-row">
+      <label>Host:</label>
+      <input type="text" id="host" value="innovariot.duckdns.org" placeholder="ex: meu.host.com"/>
+    </div>
+    <div class="form-row">
+      <label>Porta:</label>
+      <input type="number" id="port" value="9002" placeholder="ex: 9002"/>
+    </div>
+    <div class="form-row">
+      <label>Usuário:</label>
+      <input type="text" id="user" value="Cliente_INNOVAR" placeholder="usuário"/>
+    </div>
+    <div class="form-row">
+      <label>Senha:</label>
+      <input type="password" id="pass" value="123456" placeholder="senha"/>
+    </div>
+    <button id="btnConnect" class="btn">Conectar</button>
+    <div class="status-row">
+      <span id="indicator" class="indicator offline"></span>
+      <p id="status" class="status">desconectado</p>
+    </div>
+  </section>
+
+  <main class="cards" id="cardsContainer"></main>
+
+  <script src="app.js"></script>
+</body>
+</html>
