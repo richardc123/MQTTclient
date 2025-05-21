@@ -1,0 +1,222 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Paleta de cores */
+:root {
+  --bg: #f4f7fa;
+  --card-bg: #ffffff;
+  --primary: #4a90e2;
+  --text: #333333;
+  --muted: #666666;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f1c40f;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.2);
+}
+
+/* Página */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Header */
+.header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Configuração */
+.config {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
+/* Título CLIENTES */
+.sidebar h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+/* Remove marcadores padrão */
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Itens de cliente (nível 1) */
+.sidebar > ul > li {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--primary);
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.sidebar > ul > li:hover,
+.sidebar > ul > li.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Itens de equipamento (nível 2) */
+.sidebar ul ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.sidebar ul ul > li {
+  font-weight: normal;
+  font-size: 0.85rem;
+  color: var(--text);
+  padding: 0.3rem 0.5rem;
+  padding-left: 1.5rem;  /* indent extra */
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.sidebar ul ul > li:hover,
+.sidebar ul ul > li.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Grid de cards responsivo baseado em tamanho mínimo */
+.cards {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  /* Auto-ajusta o número de colunas conforme cabe, mínimo 240px por card */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px var(--shadow-hover);
+  cursor: pointer;
+}
+
+/* Título do card */
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+/* Valor */
+.card p.val {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+/* Unidade */
+.card .unit {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Boolean cards */
+.card.boolean.on {
+  background: var(--success);
+  color: #fff;
+}
+.card.boolean.off {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Input e botão dentro do card */
+.card-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.card-controls input {
+  width: 60px;
+  margin-right: 0.5rem;
+}
+.card-controls button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.card-controls button:hover {
+  background: #357ab8;
+}
+
+/* Debug console */
+.debug-console {
+  width: 100%;
+  max-width: 1200px;
+  background: #1e1e1e;
+  color: #c5c5c5;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.debug-console h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.debug-console pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
